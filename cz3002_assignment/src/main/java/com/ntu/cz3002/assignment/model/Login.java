@@ -17,20 +17,37 @@
  * under the License.
  */
 
-package com.ntu.cz3002.example;
+package com.ntu.cz3002.assignment.model;
 
-import com.opensymphony.xwork2.ActionContext;
+import com.ntu.cz3002.assignment.controller.LoginDao;
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.StrutsTestCase;
 
-public class HelloWorldTest extends StrutsTestCase {
+public class Login extends ActionSupport {
 
-    public void testHelloWorld() throws Exception {
-        HelloWorld helloWorld = container.inject(HelloWorld.class);
-        ActionContext.getContext().getContainer().inject(helloWorld);
-        String result = helloWorld.execute();
-        assertEquals("Expected a success result!", ActionSupport.SUCCESS, result);
-        assertEquals("Expected the default message!", helloWorld.getText(HelloWorld.MESSAGE), helloWorld.getMessage());
+	private String username,password;
+	public String execute() throws Exception {
+
+    	if(LoginDao.validate(username, password)){  
+            return "SUCCESS";  
+        }  
+        else{  
+        	return "ERROR";  
+        }  
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

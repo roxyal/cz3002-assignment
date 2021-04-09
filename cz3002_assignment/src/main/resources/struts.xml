@@ -4,22 +4,17 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
-    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.devMode" value="false"/>
 
-    <include file="example.xml"/>
-
-    <package name="default" namespace="/" extends="struts-default">
-
-        <default-action-ref name="index"/>
-
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
-        </action>
-
+    <package name="login" extends="struts-default">
+    
+    	<action name = "verify" class = "com.ntu.cz3002.assignment.model.Login">
+    
+    		<result name = "SUCCESS">/success.jsp</result>
+    
+    		<result name = "ERROR">/error.jsp</result>
+    
+    	</action>
     </package>
-
     <!-- Add addition packages and configuration here. -->
 </struts>
