@@ -8,6 +8,8 @@
 <title>success</title>
 </head>
 <body>
+<div align="center">
 	<h1>WELCOME <s:property value = "username"/>,<br>you have successfully logged in :)</h1>
+	</div>
 </body>
 </html>

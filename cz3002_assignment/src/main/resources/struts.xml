@@ -12,7 +12,7 @@
     
     		<result name = "SUCCESS">/success.jsp</result>
     
-    		<result name = "ERROR">/error.jsp</result>
+    		<result name = "ERROR">/index.jsp</result>
     
     	</action>
     </package>
