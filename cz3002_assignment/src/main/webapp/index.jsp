@@ -11,9 +11,9 @@
     <h1>Login to CZ3002</h1>
   <s:form action ="verify">
   
-  <s:textfield name="username" label = "Enter username"/><br>
+  <s:textfield name="username" label = "Enter username" required="required"/><br>
   
-  <s:password name="password" label = "Enter password"/><br>
+  <s:password name="password" label = "Enter password" required="required"/><br>
   
   <s:submit value="Login" align="center"/> 
   </s:form>
